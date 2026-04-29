@@ -1,0 +1,48 @@
+sentence=input("enter your sentence: ")
+v_counter =0
+window =""
+freq={}
+c_counter =0
+for ch in sentence:
+	if ch.isalpha:
+		if ch in "aeiou":
+			v_counter+=1
+		else:
+			c_counter+=1
+for i in sentence :
+		if i not in freq:
+			freq[i] =1
+		else:
+			freq[i] +=1
+left =0
+right =len(sentence)-1
+state=True
+while right > left:
+	if sentence[right] != sentence[right]:
+		state = False
+		break
+	left +=1
+	right -=1
+ans1=input("do you want to know how many vowels  and consonants does your sentence contains: enter yes or no")
+ans2=input("do you want to know if your sentence a palindrome enter yes or no:")
+ans3 =input("do you want to know if your sentence's characyer configuration")
+if ans1 == "yes":
+		print("no. of vovels ",v_counter)
+		print("no. of consonants ",c_counter)
+else:
+		print("no worries")
+if ans2 == "yes":
+		print(state)
+else:
+		print("no worries")
+if ans3 == "yes":
+		for e in sentence:
+			if e not in window:
+				print(e,"appeared",freq[e],"times")
+				window +=e
+else:
+		print("no worries")
+		
+		
+
+		
